@@ -1,0 +1,38 @@
+pipeline {
+    
+ environment { 
+
+    registry = "shooxep0daemon/boxfuse" 
+    registryCredential = '419ba461-2d72-4dcf-ae53-fbe108d3ba7f' 
+    dockerImage = 'shooxep0daemon/boxfuse:latest' 
+
+    }
+
+  agent any
+
+  stages {
+    stage('Clone github') {
+      steps{
+        git 'https://github.com/shooxep0daemon/jenkinsinab0x.git'
+      }
+    }
+
+    stage('Build docker image') {
+      steps {
+            script {
+            dockerImage = docker.build registry
+            }
+      }
+    }
+
+    stage('Push image to DH') {
+      steps {
+           script {
+                docker.withRegistry( '', registryCredential ) { 
+                dockerImage.push() 
+                }
+        }
+    }
+    }
+  }
+}
