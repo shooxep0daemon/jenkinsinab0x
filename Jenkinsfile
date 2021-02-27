@@ -11,9 +11,11 @@ pipeline {
   agent any
 
   stages {
-    stage('Clone github repo') {
-      //testhere
-      checkout scm
+    stage('Clone github repo') 
+      steps {
+        //get git repo from scm addr
+        checkout scm
+            }
     }
 
     stage('Build docker image') {
