@@ -1,7 +1,7 @@
 pipeline {
     
  environment { 
-
+   
     registry = "shooxep0daemon/boxfuse" 
     registryCredential = '78ee7a22-77d0-4ccc-b599-65c0d5541d19' 
     dockerImage = 'shooxep0daemon/boxfuse:latest' 
@@ -12,6 +12,7 @@ pipeline {
 
   stages {
     stage('Clone github repo') {
+      //testhere
       checkout scm
     }
 
