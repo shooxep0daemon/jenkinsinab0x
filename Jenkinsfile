@@ -22,7 +22,7 @@ pipeline {
       steps {
             dockerImage = docker.build("$registry","./jenkinsinab0x/")
            
-    }
+    }}
 
     stage('Push image to DH') {
       steps {
