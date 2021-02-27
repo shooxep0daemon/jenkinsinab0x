@@ -1,5 +1,5 @@
 pipeline {
-    
+   
  environment { 
    
     registry = "shooxep0daemon/boxfuse" 
@@ -20,11 +20,9 @@ pipeline {
 
     stage('Build docker image') {
       steps {
-            script {
-            dockerImage = docker.build(registry)
-            }
-      }
-    }
+            dockerImage = docker.build("$registry","./jenkinsinab0x/")
+           
+    }}
 
     stage('Push image to DH') {
       steps {
