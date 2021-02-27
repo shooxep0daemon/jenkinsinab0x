@@ -20,7 +20,7 @@ pipeline {
 
     stage('Build docker image') {
       steps {
-            dockerImage = docker.build("$registry","./jenkinsinab0x/")
+            dockerImage = docker.build("","./jenkinsinab0x/")
            
     }}
 
