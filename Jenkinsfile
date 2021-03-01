@@ -30,7 +30,7 @@ pipeline {
     stage('Push image to DH') {
       steps {
            script {
-                docker.withRegistry( '', 'registryCredential' ) { 
+                docker.withRegistry( '', registryCredential ) { 
                 dockerImage.push() 
                 }
         }
