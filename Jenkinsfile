@@ -40,7 +40,7 @@ pipeline {
     stage('Pull and RUN image from DH') {
       steps {
            script {
-                docker.image('shooxep0daemon/boxfuse:latest') { 
+                docker.image('$dockerImage').run() { 
                 }
         }
     }
