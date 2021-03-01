@@ -40,8 +40,7 @@ pipeline {
     stage('Pull and RUN image from DH') {
       steps {
            script {
-                docker.image('$dockerImage').run() { 
-                }
+                docker.image('$dockerImage').run() 
         }
     }
     }
