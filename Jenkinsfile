@@ -36,5 +36,14 @@ pipeline {
         }
     }
     }
+
+    stage('Pull and RUN image from DH') {
+      steps {
+           script {
+                docker.image( '$dockerImage' ) { 
+                }
+        }
+    }
+    }
   }
 }
